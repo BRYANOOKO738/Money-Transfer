@@ -1,0 +1,15 @@
+.custom-button {
+  display: flex; /* flex */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500; /* font-medium */
+  border-width: 2px; /* border-2 */
+  border-color: rgba(0, 0, 139, 0.6); /* border-blue-800 with opacity */
+  background-color: rgba(0, 128, 0, 0.9); /* bg-green-800 with opacity */
+  color: white; /* text-white */
+  margin-top: 1rem; /* mt-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  justify-content: center; /* justify-center */
+  align-items: center; /* items-center */
+  padding: 0.25rem 0.5rem; /* py-1 px-2 */
+  cursor: pointer; /* cursor-pointer */
+}
