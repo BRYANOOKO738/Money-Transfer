@@ -33,6 +33,24 @@ const Login = () => {
       });
       State.setLogin(true);
       State.setAddress(account[0]);
+       const chainId = await ethereum.request({ method: "eth_chainId" }); // Correct method name
+       console.log("Detected chainId:", chainId);
+
+       if (chainId === "0xe705") {
+         State.setChain("Linea Sepolia");
+       } else if (chainId === "0x4") {
+         State.setChain("Rinkeby");
+       } else if (chainId === "0x13881") {
+         State.setChain("Polygon");
+       } else if (chainId === "0xaa36a7") {
+         State.setChain("Sepolia");
+       } else {
+         State.setLogin(false);
+         seterror(
+           "Can only access with: Polygon, Sepolia, Rinkeby, or Ropsten."
+         );
+       }
+      console.log(chainId)
       setTimeout(() => {
         seterror(false);
       }, 5000);
