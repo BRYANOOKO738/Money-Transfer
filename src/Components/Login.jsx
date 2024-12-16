@@ -38,12 +38,20 @@ const Login = () => {
 
        if (chainId === "0xe705") {
          State.setChain("Linea Sepolia");
+         State.setSymbol("LineaSepEth")
+         State.setCurrency("lEth");
        } else if (chainId === "0x4") {
          State.setChain("Rinkeby");
+         State.setSymbol("RinkebyEth")
+         State.setCurrency("rEth");
        } else if (chainId === "0x13881") {
          State.setChain("Polygon");
+         State.setSymbol("PolygonEth");
+         State.setCurrency("pEth")
        } else if (chainId === "0xaa36a7") {
          State.setChain("Sepolia");
+         State.setSymbol("SepoliaEth")
+         State.setCurrency("sEth")
        } else {
          State.setLogin(false);
          seterror(
