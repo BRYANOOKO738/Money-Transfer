@@ -9,6 +9,8 @@ import { ethers } from "ethers";
 
 
 
+
+
 const AppState = createContext();
 function App() {
   const [login, setLogin] = useState(false);
@@ -18,7 +20,13 @@ function App() {
   const [balance, setBalance] = useState('')
   const [currency, setCurrency] = useState('')
   const { ethereum } = window;
- const provider = new ethers.providers.Web3Provider(ethereum);
+
+  if (!window.ethereum) {
+    console.error("MetaMask is not installed!");
+  } 
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+  
+  
 
 
   const signer = provider.getSigner();
